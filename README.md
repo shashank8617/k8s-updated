@@ -56,6 +56,7 @@ cd food-delivery-app
 
 cd frontend
 npm install
+
 cd ../backend
 npm install
 
@@ -75,11 +76,14 @@ npm run server
 6. Run the frontend:
 
 cd ../frontend
-npm run dev
+npm run build
 
 
 The application should now be running on `http://localhost:3000`.
 
+The frontend application should now on `http://localhost:<port>`.
+
+The Admin application should now on `http://localhost:<port>`
 ## API Endpoints
 
 - **GET /api/menu**: Get all menu items.
