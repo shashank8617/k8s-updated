@@ -66,6 +66,7 @@ npm install
    - Define the following variables:
      - `MONGODB_URI`: MongoDB connection URI.
      - `JWT_SECRET`: Secret key for JWT token generation.
+     - `BACKEND_URL`: Enter the backend URL or endpoint of backend service.
      - Other necessary environment variables (e.g., Stripe API keys).
 
 5. Run the backend server:
