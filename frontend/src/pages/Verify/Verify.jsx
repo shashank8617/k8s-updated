@@ -10,7 +10,7 @@ const Verify = () => {
     const success = searchParams.get("success");
     const orderId = searchParams.get("orderId");
     
-
+    // console.log(url);
     const navigate = useNavigate();
 
     const verifyPayment = async () => {

@@ -12,7 +12,7 @@ const Add = () => {
         price: "",
         category: "Salad"
     });
-
+    console.log(url);
     const [image, setImage] = useState(false);
 
     const onSubmitHandler = async (event) => {

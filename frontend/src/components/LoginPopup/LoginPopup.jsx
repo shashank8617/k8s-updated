@@ -9,6 +9,7 @@ const LoginPopup = ({ setShowLogin }) => {
 
     const { setToken, url,loadCartData } = useContext(StoreContext)
     const [currState, setCurrState] = useState("Sign Up");
+    // console.log(url);
 
     const [data, setData] = useState({
         name: "",
