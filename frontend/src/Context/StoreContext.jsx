@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    const url = import.meta.env.BACKEND_URL ||"http://localhost:4000"
+    const url = import.meta.env.BACKEND_URL ||"http://13.232.217.36:5000"
     const [food_list, setFoodList] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")

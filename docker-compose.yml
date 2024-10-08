@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:80'  # React will run on port 3000
+    networks:
+      - foodnetwork
+
+  # Admin service
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    ports:
+      - '4000:80'  # Admin will run on port 4000
+    networks:
+      - foodnetwork
+
+  # Backend service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - MONGODB_URI=${MONGODB_URI}  # Load from .env file for security
+      - JWT_SECRET=${JWT_SECRET}
+    ports:
+      - '5000:4000'  # Backend exposed on port 5000 mapped to 4000 in container
+    networks:
+      - foodnetwork
+
+networks:
+  foodnetwork:
+    driver: bridge
+
