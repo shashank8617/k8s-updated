@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: shashank8617/fooddelivery-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+admin:
+  image:
+    repository: shashank8617/fooddelivery-admin
+    tag: latest
+  
+backend:
+  image:
+    repository: shashank8617/fooddelivery-backend
+    tag: latest
+
+frontend:
+  image:
+    repository: shashank8617/fooddelivery-frontend
+    tag: latest
+

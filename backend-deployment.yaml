@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: shashank8617/fooddelivery:backend  # Replace with your Docker image
+        ports:
+        - containerPort: 4000
+        env:
+        - name: MONGODB_URI
+          value: "mongodb+srv://shashankkarigowda8617:AjWsrAjz4tMM2MGE@cluster0.xto60.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        - name: JWT_SECRET
+          value: "JWT^&*_SECRET"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 4000
+      targetPort: 4000
+  selector:
+    app: backend
+
